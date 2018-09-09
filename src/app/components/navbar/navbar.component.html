@@ -7,19 +7,20 @@
 
   <div class=" collapse navbar-collapse" id="navbarColor02">
 
-    <div class="d-flex justify-content-end">
-    <ul class="navbar-nav  ml-auto">
-      <li class="nav-item" routerLinkActive="active">
+    <div class="">
+    <ul class="navbar-nav mx-auto  ">
+
+      <li class="nav-item " routerLinkActive="active">
         <a class="nav-link" [routerLink]="['home']">Home<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['login']">Sign in</a>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!isLogin">
+        <a class="nav-link" [routerLink]="['login']">Sign In</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['register']">Sign Out</a>
+      <li class="nav-item" routerLinkActive="active" *ngIf="!isLogin">
+        <a class="nav-link" [routerLink]="['register']">Sign Up</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#">Logout</a>
+      <li class="nav-item" routerLinkActive="active" *ngIf="isLogin">
+        <a class="nav-link" (click)="onClickLogout()">Logout</a>
       </li>
     </ul>
   </div>

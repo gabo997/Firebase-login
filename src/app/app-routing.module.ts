@@ -8,12 +8,14 @@ import { NotFoundPageComponent } from "./components/not-found-page/not-found-pag
 import { RegisterPageComponent } from "./components/register-page/register-page.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 
+import { AuthGuard } from "./guards/auth.guard";
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent},
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundPageComponent }
 
 ];
