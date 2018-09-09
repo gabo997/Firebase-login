@@ -10,8 +10,10 @@ import { Router } from "@angular/router";
 export class NavbarComponent implements OnInit {
 
   public isLogin:boolean = false;
-  public userName:string;
+  public username:string;
   public emailUser:string;
+  public avatar:string;
+
 
   constructor(  private _fireLogout:FirebaseService,
                 private _router:Router) { }
@@ -21,8 +23,10 @@ export class NavbarComponent implements OnInit {
       .subscribe( auth => {
         if(auth){
           this.isLogin = true;
-          this.userName = auth.displayName;
+          this.username = auth.displayName;
           this.emailUser = auth.email;
+          this.avatar = auth.photoURL;
+          console.log(this.avatar);
         }
       })
   }

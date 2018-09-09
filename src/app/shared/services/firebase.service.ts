@@ -33,6 +33,20 @@ export class FirebaseService {
     });
   }
 
+  //regresa una promesa
+  loginWithGoogle(){
+    return this._afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+
+  loginWithTwitter(){
+    return this._afAuth.auth.signInWithPopup(new auth.TwitterAuthProvider());
+  }
+
+  loginWithFacebook(){
+    return this._afAuth.auth.signInWithPopup(new auth.FacebookAuthProvider());
+  }
+
+
   //obtenemos los datos del usuario en caso de que este logeado
   getAuthentication(){
     return this._afAuth.authState.pipe(map (auth => auth));
