@@ -1,1 +1,6 @@
-.img-rounded-circle{ width: 45px}
+.img-rounded-circle{ width: 35px}
+.drop{ margin-left: 700px;}
+
+@media screen and (max-width: 767px){
+  .drop{ margin-left: 0; }
+}

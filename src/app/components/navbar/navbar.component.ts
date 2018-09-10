@@ -19,6 +19,8 @@ export class NavbarComponent implements OnInit {
                 private _router:Router) { }
 
   ngOnInit() {
+
+  
     this._fireLogout.getAuthentication()
       .subscribe( auth => {
         if(auth){
@@ -28,11 +30,13 @@ export class NavbarComponent implements OnInit {
           this.avatar = auth.photoURL;
           console.log(this.avatar);
         }
-      })
+      });
   }
 
   onClickLogout(){
-    this._fireLogout.logout();
+
+    if(this.isLogin)
+      this._fireLogout.logout();
     this._router.navigate(['/home']);
   }
 }
