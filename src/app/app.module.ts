@@ -23,6 +23,7 @@ import { environment } from "../environments/environment";
 //services
 import { FirebaseService } from "./shared/services/firebase.service";
 import { AuthGuard } from "./guards/auth.guard";
+import { NoAuthGuard } from "./guards/no-auth.guard";
 
 //Flash Messages
 import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messages";
@@ -46,7 +47,7 @@ import { FlashMessagesModule, FlashMessagesService } from "angular2-flash-messag
     FlashMessagesModule
 
   ],
-  providers: [FirebaseService, AuthGuard, FlashMessagesService],
+  providers: [FirebaseService, AuthGuard, NoAuthGuard, FlashMessagesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
