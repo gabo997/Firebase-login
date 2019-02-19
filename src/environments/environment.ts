@@ -5,13 +5,15 @@
 export const environment = {
   production: true,
   firebaseConfig:{
-    apiKey: "AIzaSyCS_a7qdOcyVgOoiPdx8xrsmqJgVP1nMYU",
-    authDomain: "angular-simple-auth.firebaseapp.com",
-    databaseURL: "https://angular-simple-auth.firebaseio.com",
-    projectId: "angular-simple-auth",
-    storageBucket: "angular-simple-auth.appspot.com",
-    messagingSenderId: "976504986081"
+    apiKey: "API_KEY",
+    authDomain: "AUTH_DOMAIN",
+    databaseURL: "DATABASE_URL",
+    projectId: "PROJECT_ID",
+    storageBucket: "STORAGE_BUCKET",
+    messagingSenderId: "MESSAGING_SENDER_ID"
   }
+};
+
 };
 
 /*
